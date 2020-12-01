@@ -18,6 +18,7 @@ export class LocalStrategy extends PassportStrategy(Strategy) {
     username: string,
     password: string,
   ): Promise<any> {
+    // followed the documentation: https://docs.nestjs.com/security/authentication#request-scoped-strategies
     const contextId = ContextIdFactory.getByRequest(request)
     // "AuthService" is a request-scoped provider
     const authService = await this.moduleRef.resolve(AuthService, contextId)

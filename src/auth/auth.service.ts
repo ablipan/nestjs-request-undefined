@@ -1,18 +1,17 @@
 import { Inject, Injectable, Logger } from '@nestjs/common'
 import { REQUEST } from '@nestjs/core'
-import { FastifyRequest } from 'fastify'
+import { Request } from 'express'
 
 @Injectable()
 export class AuthService {
   private readonly logger = new Logger(AuthService.name)
 
-  constructor(@Inject(REQUEST) private request: FastifyRequest){}
+  constructor(@Inject(REQUEST) private request: Request){}
 
-  /**
-   * 使用at获取session信息
-   */
   async getSession(): Promise<boolean> {
+    // @fixme got error here!
     this.logger.log(this.request.url)
+    // hard code...
     return true
   }
 }
