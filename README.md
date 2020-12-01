@@ -8,7 +8,7 @@ $ npm install
 $ npm run start:dev
 ```
 
-Open url: http://127.0.0.1:3000/auth?username=1&password=2
+## Open http://127.0.0.1:3000/auth?username=1&password=2
 
 The terminal get
 
